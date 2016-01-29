@@ -8,6 +8,7 @@ using std::endl;
 int factorial(unsigned long int x);
 void validaTrap(int x1,int x2,int x3,int x4,int y1,int y2,int y3,int y4);
 void validaPunto(int x1,int x2,int x3,int x4,int y1,int y2,int y3,int y4);
+double distancia(int x1, int y1, int x2, int y2);
 
 int main(int argc,char*argv[]){
 	int expo,opc;
@@ -42,6 +43,12 @@ int main(int argc,char*argv[]){
 		cin>>y4;
 		validaTrap(x1,x2,x3,x4,y1,y2,y3,y4);
 		validaPunto(x1,x2,x3,x4,y1,y2,y3,y4);
+		cout<<"Los lados miden: "<<endl;
+		cout<<"Lado 1: "<<distancia(x1,y1,x2,y2)<<endl;
+		cout<<"Lado 2: "<<distancia(x2,y2,x4,y4)<<endl;
+		cout<<"Lado 3: "<<distancia(x4,y4,x3,y3)<<endl;
+		cout<<"Lado 4: "<<distancia(x3,y3,x1,y1)<<endl;
+		
 	}
 	return 0;
     
@@ -64,4 +71,8 @@ void validaPunto(int x1,int x2,int x3,int x4,int y1,int y2,int y3,int y4){
 	if((x1==x2&&y1==y2)||(x1==x3&&y1==y3)||(x1==x4&&y1==y4)||(x2==x3&&y2==y3)||(x2==x4&&y2==y4)||(x3==x4&&y3==y4)){
 			cout<<"Hay puntos iguales. "<<endl;
 		}
+}
+double distancia(int x1, int y1, int x2, int y2){
+	double distancia=sqrt(pow(x2-x1,2)+pow(y2-y1,2));
+	return distancia;
 }
