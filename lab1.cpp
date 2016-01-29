@@ -9,6 +9,8 @@ int factorial(unsigned long int x);
 void validaTrap(int x1,int x2,int x3,int x4,int y1,int y2,int y3,int y4);
 void validaPunto(int x1,int x2,int x3,int x4,int y1,int y2,int y3,int y4);
 double distancia(int x1, int y1, int x2, int y2);
+double semiperimetro(double lado1,double lado2, double lado3);
+double perimetro(double lado1,double lado2, double lado3);
 
 int main(int argc,char*argv[]){
 	int expo,opc;
@@ -59,6 +61,17 @@ int main(int argc,char*argv[]){
 		cout<<"Lado 1: "<<distancia(x1,y1,x2,y2)<<endl;
 		cout<<"Lado 2: "<<distancia(x2,y2,x4,y4)<<endl;
 		cout<<"Lado 3: "<<distancia(x4,y4,x1,y1)<<endl;
+		double lado1=distancia(x1,y1,x3,y3);
+		double lado2=distancia(x3,y3,x4,y4);
+		double lado3=distancia(x4,y4,x1,y1);
+		double lado4=distancia(x1,y1,x2,y2);
+		double lado5=distancia(x2,y2,x4,y4);
+		double lado6=distancia(x4,y4,x1,y1);
+		cout<<endl;
+		cout<<"Semiperimetro triangulo 1: "<<semiperimetro(lado1,lado2,lado3)<<endl;
+		cout<<"Semiperimetro triangulo 2: "<<semiperimetro(lado4,lado5,lado6)<<endl;
+		cout<<"Perimetro triangulo 1: "<<perimetro(lado1,lado2,lado3)<<endl;
+		cout<<"Perimetro triangulo 2: "<<perimetro(lado4,lado5,lado6)<<endl;
 	}
 	return 0;
     
@@ -85,4 +98,12 @@ void validaPunto(int x1,int x2,int x3,int x4,int y1,int y2,int y3,int y4){
 double distancia(int x1, int y1, int x2, int y2){
 	double distancia=sqrt(pow(x2-x1,2)+pow(y2-y1,2));
 	return distancia;
+}
+double semiperimetro(double lado1,double lado2, double lado3){
+	double semiperimetro=(lado1+lado2+lado3)/2;
+	return semiperimetro;
+}
+double perimetro(double lado1,double lado2, double lado3){
+	double perimetro=(lado1+lado2+lado3);
+	return perimetro;
 }
