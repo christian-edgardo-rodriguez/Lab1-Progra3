@@ -10,6 +10,8 @@ void validaTrap(int x1,int x2,int x3,int x4,int y1,int y2,int y3,int y4);
 void validaPunto(int x1,int x2,int x3,int x4,int y1,int y2,int y3,int y4);
 double distancia(int x1, int y1, int x2, int y2);
 double semiperimetro(double lado1,double lado2, double lado3);
+double perimetro(double lado1,double lado2, double lado3);
+double altura(double lado1,double lado2, double lado3, double semiperimetro);
 
 int main(int argc,char*argv[]){
 	int expo,opc;
@@ -69,6 +71,20 @@ int main(int argc,char*argv[]){
 		cout<<endl;
 		cout<<"Semiperimetro triangulo 1: "<<semiperimetro(lado1,lado2,lado3)<<endl;
 		cout<<"Semiperimetro triangulo 2: "<<semiperimetro(lado4,lado5,lado6)<<endl;
+		cout<<"Perimetro triangulo 1: "<<perimetro(lado1,lado2,lado3)<<endl;
+		cout<<"Perimetro triangulo 2: "<<perimetro(lado4,lado5,lado6)<<endl;
+		cout<<endl;
+		double semiperimetro1=semiperimetro(lado1,lado2,lado3);
+		double semiperimetro2=semiperimetro(lado4,lado5,lado6);
+		cout<<"Las alturas del triangulo 1 son: "<<endl;
+		cout<<"Altura 1: "<<altura(lado1,lado2,lado3,semiperimetro1)<<endl;
+		cout<<"Altura 2: "<<altura(lado2,lado1,lado3,semiperimetro1)<<endl;
+		cout<<"Altura 3: "<<altura(lado3,lado2,lado1,semiperimetro1)<<endl;
+		cout<<endl;
+		cout<<"Las alturas del triangulo 2 son: "<<endl;
+		cout<<"Altura 1: "<<altura(lado1,lado2,lado3,semiperimetro2)<<endl;
+		cout<<"Altura 2: "<<altura(lado2,lado1,lado3,semiperimetro2)<<endl;
+		cout<<"Altura 3: "<<altura(lado3,lado2,lado1,semiperimetro2)<<endl;
 	}
 	return 0;
     
@@ -99,4 +115,12 @@ double distancia(int x1, int y1, int x2, int y2){
 double semiperimetro(double lado1,double lado2, double lado3){
 	double semiperimetro=(lado1+lado2+lado3)/2;
 	return semiperimetro;
+}
+double perimetro(double lado1,double lado2, double lado3){
+	double perimetro=(lado1+lado2+lado3);
+	return perimetro;
+}
+double altura(double lado1,double lado2, double lado3, double semiperimetro){
+	double altura=(2/lado1)*sqrt(semiperimetro*(semiperimetro*lado1)*(semiperimetro*lado2)*(semiperimetro*lado3));
+	return altura;
 }
