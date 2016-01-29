@@ -43,12 +43,22 @@ int main(int argc,char*argv[]){
 		cin>>y4;
 		validaTrap(x1,x2,x3,x4,y1,y2,y3,y4);
 		validaPunto(x1,x2,x3,x4,y1,y2,y3,y4);
+		cout<<endl;
 		cout<<"Los lados miden: "<<endl;
 		cout<<"Lado 1: "<<distancia(x1,y1,x2,y2)<<endl;
 		cout<<"Lado 2: "<<distancia(x2,y2,x4,y4)<<endl;
 		cout<<"Lado 3: "<<distancia(x4,y4,x3,y3)<<endl;
 		cout<<"Lado 4: "<<distancia(x3,y3,x1,y1)<<endl;
-		
+		cout<<endl;
+		cout<<"Los lados del triangulo 1 miden: "<<endl;
+		cout<<"Lado 1: "<<distancia(x1,y1,x3,y3)<<endl;
+		cout<<"Lado 2: "<<distancia(x3,y3,x4,y4)<<endl;
+		cout<<"Lado 3: "<<distancia(x4,y4,x1,y1)<<endl;
+		cout<<endl;
+		cout<<"Los lados del triangulo 2 miden: "<<endl;
+		cout<<"Lado 1: "<<distancia(x1,y1,x2,y2)<<endl;
+		cout<<"Lado 2: "<<distancia(x2,y2,x4,y4)<<endl;
+		cout<<"Lado 3: "<<distancia(x4,y4,x1,y1)<<endl;
 	}
 	return 0;
     
